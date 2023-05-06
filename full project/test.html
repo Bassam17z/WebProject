@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="mainMenu.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>My Phonebook</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL" >
+    <li><div id="card" style="scale: 0.7;">
+        <img class="img" src="images\gp1.jpg">
+        <div id="price-tag"><span id="price" class="center-text1" style="font-size: 16px;
+        transform: skew(30deg); color: aliceblue;">8,000$</span></div>
+        <div id="filter"><span class="center-text1"><span><span id="year">1974 </span><span id="brand">Pontiac</span><span id="model"> GrandPrix</span></span></span></div>
+        <div id="filter"><span class="center-text2"><span id="gear">Automatic </span><pre> </pre><span id="mileage"> 70,000 KM</span></span></div>
+        <div id="filter"><span class="center-text2" style="color:red;"><span id="type">Classic</span></span></div>
+        <div id="button" ><span class="details">More Details</span><div id="heart-bg"><a class="heart" ></a></div></div>
+    </div></li>
+
+
+    <li><div id="card" style="scale: 0.7;">
+        <img class="img" src="images\gp1.jpg">
+        <div id="price-tag"><span id="price" class="center-text1" style="font-size: 16px;
+        transform: skew(30deg); color: aliceblue;">8,000$</span></div>
+        <div id="filter"><span class="center-text1"><span><span id="year">1974 </span><span id="brand">dodge</span><span id="model"> GrandPrix</span></span></span></div>
+        <div id="filter"><span class="center-text2"><span id="gear">Automatic </span><pre> </pre><span id="mileage"> 70,000 KM</span></span></div>
+        <div id="filter"><span class="center-text2" style="color:red;"><span id="type">Classic</span></span></div>
+        <div id="button" ><span class="details">More Details</span><div id="heart-bg"><a class="heart" ></a></div></div>
+    </div></li>
+
+  
+    <li><div id="card" style="scale: 0.7;">
+        <img class="img" src="images\gp1.jpg">
+        <div id="price-tag"><span id="price" class="center-text1" style="font-size: 16px;
+        transform: skew(30deg); color: aliceblue;">8,000$</span></div>
+        <div id="filter"><span class="center-text1"><span><span id="year">1974 </span><span id="brand">barracuda</span><span id="model"> GrandPrix</span></span></span></div>
+        <div id="filter"><span class="center-text2"><span id="gear">Automatic </span><pre> </pre><span id="mileage"> 70,000 KM</span></span></div>
+        <div id="filter"><span class="center-text2" style="color:red;"><span id="type">Classic</span></span></div>
+        <div id="button" ><span class="details">More Details</span><div id="heart-bg"><a class="heart" ></div></div>
+    </div></li>
+
+
+    
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        var brand = li[i].querySelector("#brand");
+        if (brand && brand.textContent.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
